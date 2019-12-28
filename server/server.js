@@ -23,5 +23,58 @@ var id = 0;
 
 // TODO: make the REST routes to perform CRUD on lions
 
-app.listen(3000);
+app.get('/lions',(req,res) => {
+  res.json(lions);
+});
+
+app.get('/lions/:id',(req,res) => {
+  var lionIndex = _.findIndex(lions, {id: req.params.id});
+  if(lionIndex == -1){
+    res.json({message: "Lion not Found"}); 
+  }
+  else{
+    res.json(lions[lionIndex]);
+  }
+});
+
+app.post('/lions',(req,res) => {
+  var lion = req.body;
+  if(lion.name != undefined){
+  lion.id = ''+(id+1);
+  id+=1
+  lions.push(lion);
+  res.json(lion);
+  }
+  else{
+    res.json({message: "Invalid post"});
+  }
+});
+
+app.put('/lions/:id',(req,res) => {
+  var lionIndex = _.findIndex(lions, {id: req.params.id});
+  if(lionIndex == -1){
+    res.json({message: "Lion not Found"});
+  }
+  else{
+    var lionId = lions[lionIndex].id;
+    lions[lionIndex] = req.body;
+    lions[lionIndex].id = lionId;
+    res.json(lions[lionIndex]);
+  }
+});
+
+app.delete('/lions/:id',(req,res) => {
+  var lionIndex = _.findIndex(lions, {id: req.params.id});
+  if(lionIndex == -1){
+    res.json({message: "Lion not Found"});
+  }
+  else{
+    var lion = lions[lionIndex];
+    lions.splice(lionIndex,1);
+    res.json(lion);
+  }
+});
+
+app.listen(3000,function(){
 console.log('on port 3000');
+});
