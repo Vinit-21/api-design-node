@@ -1,8 +1,12 @@
 dependencies:
   body-parser: 1.19.0
+  colors: 1.4.0
   express: 4.17.1
-  lodash: 3.10.1
+  lodash: 4.17.15
   morgan: 1.9.1
+devDependencies:
+  chai: 3.5.0
+  supertest: 1.2.0
 packages:
   /accepts/1.3.7:
     dependencies:
@@ -17,6 +21,14 @@ packages:
     dev: false
     resolution:
       integrity: sha1-ml9pkFGx5wczKPKgCJaLZOopVdI=
+  /assertion-error/1.1.0:
+    dev: true
+    resolution:
+      integrity: sha512-jgsaNduz+ndvGyFt3uSuWqvy4lCnIJiovtouQN5JZHOKCS2QuhEdbcQHFhVksz2N2U9hXJo8odG7ETyWlEeuDw==
+  /async/1.5.2:
+    dev: true
+    resolution:
+      integrity: sha1-7GphrlZIDAw8skHJVhjiCJL5Zyo=
   /basic-auth/2.0.1:
     dependencies:
       safe-buffer: 5.1.2
@@ -48,6 +60,34 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha512-zauLjrfCG+xvoyaqLoV8bLVXXNGC4JqlxFCutSDWA6fJrTo2ZuvLYTqZ7aHBLZSMOopbzwv8f+wZcVzfVTI2Dg==
+  /chai/3.5.0:
+    dependencies:
+      assertion-error: 1.1.0
+      deep-eql: 0.1.3
+      type-detect: 1.0.0
+    dev: true
+    engines:
+      node: '>= 0.4.0'
+    resolution:
+      integrity: sha1-TQJjewZ/6Vi9v906QOxW/vc3Mkc=
+  /colors/1.4.0:
+    dev: false
+    engines:
+      node: '>=0.1.90'
+    resolution:
+      integrity: sha512-a+UqTh4kgZg/SlGvfbzDHpgRu7AAQOmmqRHJnxhRZICKFUT91brVhNNt58CMWU9PsBbv3PDCZUHbVxuDiH2mtA==
+  /combined-stream/1.0.8:
+    dependencies:
+      delayed-stream: 1.0.0
+    dev: true
+    engines:
+      node: '>= 0.8'
+    resolution:
+      integrity: sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==
+  /component-emitter/1.2.1:
+    dev: true
+    resolution:
+      integrity: sha1-E3kY1teCg/ffemt8WmPhQOaUJeY=
   /content-disposition/0.5.3:
     dependencies:
       safe-buffer: 5.1.2
@@ -72,12 +112,31 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-+Hp8fLp57wnUSt0tY0tHEXh4voZRDnoIrZPqlo3DPiI4y9lwg/jqx+1Om94/W6ZaPDOUbnjOt/99w66zk+l1Xg==
+  /cookiejar/2.0.6:
+    dev: true
+    resolution:
+      integrity: sha1-Cr81atANHFohnYjURRgEbdAmrP4=
+  /core-util-is/1.0.2:
+    dev: true
+    resolution:
+      integrity: sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
   /debug/2.6.9:
     dependencies:
       ms: 2.0.0
-    dev: false
     resolution:
       integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==
+  /deep-eql/0.1.3:
+    dependencies:
+      type-detect: 0.1.1
+    dev: true
+    resolution:
+      integrity: sha1-71WKyrjeJSBs1xOQbXTlaTDrafI=
+  /delayed-stream/1.0.0:
+    dev: true
+    engines:
+      node: '>=0.4.0'
+    resolution:
+      integrity: sha1-3zrhmayt+31ECqrgsp4icrJOxhk=
   /depd/1.1.2:
     dev: false
     engines:
@@ -145,6 +204,10 @@ packages:
       node: '>= 0.10.0'
     resolution:
       integrity: sha512-mHJ9O79RqluphRrcw2X/GTh3k9tVv8YcoyY4Kkh4WDMUYKRZUq0h1o0w2rrrxBqM7VoeUVqgb27xlEMXTnYt4g==
+  /extend/3.0.0:
+    dev: true
+    resolution:
+      integrity: sha1-WkdDU7nzNT3dgXbf03uRyDpG8dQ=
   /finalhandler/1.1.2:
     dependencies:
       debug: 2.6.9
@@ -159,6 +222,22 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha512-aAWcW57uxVNrQZqFXjITpW3sIUQmHGG3qSb9mUah9MgMC4NeWhNOlNjXEYq3HjRAvL6arUviZGGJsBg6z0zsWA==
+  /form-data/1.0.0-rc3:
+    dependencies:
+      async: 1.5.2
+      combined-stream: 1.0.8
+      mime-types: 2.1.25
+    dev: true
+    engines:
+      node: '>= 0.10'
+    resolution:
+      integrity: sha1-01vGLn+8KTeuePlIqqDTjZBgdXc=
+  /formidable/1.0.16:
+    dev: true
+    engines:
+      node: '>=0.8.0'
+    resolution:
+      integrity: sha1-SRbP38TL7QILJXpqlQWpqzjCzQ4=
   /forwarded/0.1.2:
     dev: false
     engines:
@@ -208,7 +287,6 @@ packages:
     resolution:
       integrity: sha1-Yzwsg+PaQqUC9SRmAiSA9CCCYd4=
   /inherits/2.0.4:
-    dev: false
     resolution:
       integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==
   /ipaddr.js/1.9.0:
@@ -217,10 +295,14 @@ packages:
       node: '>= 0.10'
     resolution:
       integrity: sha512-M4Sjn6N/+O6/IXSJseKqHoFc+5FdGJ22sXqnjTpdZweHK64MzEPAyQZyEU3R/KRv2GLoa7nNtg/C2Ev6m7z+eA==
-  /lodash/3.10.1:
+  /isarray/0.0.1:
+    dev: true
+    resolution:
+      integrity: sha1-ihis/Kmo9Bd+Cav8YDiTmwXR7t8=
+  /lodash/4.17.15:
     dev: false
     resolution:
-      integrity: sha1-W/Rejkm6QYnhfUgnid/RW9FAt7Y=
+      integrity: sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
   /media-typer/0.3.0:
     dev: false
     engines:
@@ -232,13 +314,11 @@ packages:
     resolution:
       integrity: sha1-sAqqVW3YtEVoFQ7J0blT8/kMu2E=
   /methods/1.1.2:
-    dev: false
     engines:
       node: '>= 0.6'
     resolution:
       integrity: sha1-VSmk1nZUE07cxSZmVoNbD4Ua/O4=
   /mime-db/1.42.0:
-    dev: false
     engines:
       node: '>= 0.6'
     resolution:
@@ -246,11 +326,15 @@ packages:
   /mime-types/2.1.25:
     dependencies:
       mime-db: 1.42.0
-    dev: false
     engines:
       node: '>= 0.6'
     resolution:
       integrity: sha512-5KhStqB5xpTAeGqKBAMgwaYMnQik7teQN4IAzC7npDv6kzeU6prfkR67bc87J1kWMPGkoaZSq1npmexMgkmEVg==
+  /mime/1.3.4:
+    dev: true
+    hasBin: true
+    resolution:
+      integrity: sha1-EV+eO2s9rylZmDyzjxSaLUDrXVM=
   /mime/1.6.0:
     dev: false
     engines:
@@ -271,7 +355,6 @@ packages:
     resolution:
       integrity: sha512-HQStPIV4y3afTiCYVxirakhlCfGkI161c76kKFca7Fk1JusM//Qeo1ej2XaMniiNeaZklMVrh3vTtIzpzwbpmA==
   /ms/2.0.0:
-    dev: false
     resolution:
       integrity: sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=
   /ms/2.1.1:
@@ -317,6 +400,10 @@ packages:
       node: '>= 0.10'
     resolution:
       integrity: sha512-t/7RxHXPH6cJtP0pRG6smSr9QJidhB+3kXu0KgXnbGYMgzEnUxRQ4/LDdfOwZEMyIh3/xHb8PX3t+lfL9z+YVQ==
+  /qs/2.3.3:
+    dev: true
+    resolution:
+      integrity: sha1-6eha2+ddoLvkyOBHaghikPhjtAQ=
   /qs/6.7.0:
     dev: false
     engines:
@@ -340,6 +427,19 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha512-4Oz8DUIwdvoa5qMJelxipzi/iJIi40O5cGV1wNYp5hvZP8ZN0T+jiNkL0QepXs+EsQ9XJ8ipEDoiH70ySUJP3Q==
+  /readable-stream/1.0.27-1:
+    dependencies:
+      core-util-is: 1.0.2
+      inherits: 2.0.4
+      isarray: 0.0.1
+      string_decoder: 0.10.31
+    dev: true
+    resolution:
+      integrity: sha1-a2eYPCA1fO/QfwFlABoW1xDZEHg=
+  /reduce-component/1.0.1:
+    dev: true
+    resolution:
+      integrity: sha1-4Mk1QsV0UhvqE98PlIjtgqt3xdo=
   /safe-buffer/5.1.2:
     dev: false
     resolution:
@@ -389,12 +489,52 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha1-Fhx9rBd2Wf2YEfQ3cfqZOBR4Yow=
+  /string_decoder/0.10.31:
+    dev: true
+    resolution:
+      integrity: sha1-YuIDvEF2bGwoyfyEMB2rHFMQ+pQ=
+  /superagent/1.8.5:
+    dependencies:
+      component-emitter: 1.2.1
+      cookiejar: 2.0.6
+      debug: 2.6.9
+      extend: 3.0.0
+      form-data: 1.0.0-rc3
+      formidable: 1.0.16
+      methods: 1.1.2
+      mime: 1.3.4
+      qs: 2.3.3
+      readable-stream: 1.0.27-1
+      reduce-component: 1.0.1
+    deprecated: 'Please note that v5.0.1+ of superagent removes User-Agent header by default, therefore you may need to add it yourself (e.g. GitHub blocks requests without a User-Agent header).  This notice will go away with v5.0.2+ once it is released.'
+    dev: true
+    engines:
+      node: '>= 0.8'
+    resolution:
+      integrity: sha1-HA3cOvMOgOuE68BcshItqP6UC1U=
+  /supertest/1.2.0:
+    dependencies:
+      methods: 1.1.2
+      superagent: 1.8.5
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-hQp5X5Bo0vrxngF5n/CZYuDOQ74=
   /toidentifier/1.0.0:
     dev: false
     engines:
       node: '>=0.6'
     resolution:
       integrity: sha512-yaOH/Pk/VEhBWWTlhI+qXxDFXlejDGcQipMlyxda9nthulaxLZUNcUqFxokp0vcYnvteJln5FNQDRrxj3YcbVw==
+  /type-detect/0.1.1:
+    dev: true
+    resolution:
+      integrity: sha1-C6XsKohWQORw6k6FBZcZANrFiCI=
+  /type-detect/1.0.0:
+    dev: true
+    resolution:
+      integrity: sha1-diIXzAbbJY7EiQihKY6LlRIejqI=
   /type-is/1.6.18:
     dependencies:
       media-typer: 0.3.0
@@ -426,7 +566,10 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
-  body-parser: ^1.13.2
-  express: ^4.13.1
-  lodash: ^3.10.0
-  morgan: ^1.6.1
+  body-parser: ^1.19.0
+  chai: ^3.2.0
+  colors: ^1.4.0
+  express: ^4.17.1
+  lodash: ^4.17.15
+  morgan: ^1.9.1
+  supertest: ^1.0.1
